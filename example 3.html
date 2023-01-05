@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div id="divDD"></div>
+	<button onclick="makeDD()">Make DD</button>
+	<button onclick="showDD()">Show DD</button>
+	<script type="text/javascript">
+		let empData = [
+		{name:'Steve', empId:'BM222'},
+		{name:'George', empId:'BM405'},
+		{name:'Jack', empId:'CT188'},
+		{name:'Anna', empId:'Ak534'},
+		{name:'Mary', empId:'CT029'}];
+		function makeDD() {
+			let div = document.getElementById('divDD');
+			let html = makeDDOption(empData, 'Select Employee', 'CT188');
+			div.innerHTML = html;
+		}
+		function showDD() {
+			let dd = document.getElementById('dd1');
+			console.log(dd.value);
+		}
+		function makeDDOption(arr, valueOnTop, SelVal) {
+			const optArr = arr.map(function(opt) {
+				if(opt.empId == SelVal)
+				return '<option selected value=\''+ opt.empId+'\'>'+ opt.name + '</option>';
+				else
+				return '<option value=\''+ opt.empId+'\'>'+ opt.name + '</option>';
+ 
+			});
+			let topStr = ''
+			if(SelVal == '')
+			topStr = '<option selected disabled>' + valueOnTop + '</option>';
+			else
+			topStr = '<option  disabled>' + valueOnTop + '</option>';
+
+			let str = '<select id=\'dd1\'>'+ topStr + optArr.join('')+'</select>';
+			console.log(str);
+		}
+	</script>
+</body>
+</html>
