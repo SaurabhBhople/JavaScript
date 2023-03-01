@@ -1,0 +1,44 @@
+body{
+	width: 70%;
+	margin: auto;
+	font-size: 25px;
+}
+h1{
+	margin-left: 2%;
+}
+Table{
+	border: 2pt solid black;
+	border-collapse: collapse;
+	margin: 2% 3%;
+	text-align: center;
+}
+th{
+	color: white;
+	background: black;
+	padding-left:15px;
+	padding-right: 15px;
+	border: 2px solid white;
+}
+td{
+	border: 2px solid black;
+}
+table button{
+	background: red;
+	color: white;
+	font-size: 18px;
+	text-align: center;
+	border-color: gray;
+	padding-right: 15px;
+	padding-left: 10px;
+	margin: 3%;
+}
+div{
+	margin: 3% 3%;
+}
+button{
+  cursor: pointer;
+}
+.active, button:hover {
+  	border: 2px solid blue;
+  	
+}

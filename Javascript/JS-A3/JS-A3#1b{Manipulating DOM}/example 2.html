@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<select id="dd01">
+		<option disabled selected>Select the Course</option>
+		<option value="1">JavaScript</option>
+		<option value="2">React</option>
+		<option value="3">Angular</option>
+	</select>
+	<select id="dd02">
+		<option disabled selected>Select the Course</option>
+		<option>JavaScript</option>
+		<option>React</option>
+		<option>Angular</option>
+	</select>
+	<button onclick="display()">Display</button>
+	<script type="text/javascript">
+		function display() {
+			let dd1 = document.getElementById('dd01');
+			console.log(dd1.value); 
+			let dd2 = document.getElementById('dd02');
+			console.log(dd2.value);
+			// dd2.disabled = false;
+
+		}
+	</script>
+</body>
+</html>

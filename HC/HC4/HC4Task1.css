@@ -1,0 +1,32 @@
+body{
+	width: 70%;
+	margin: 5% 0px;
+	background: #003175;
+	font-size: 30px;
+}
+.container{
+	width: 60%;
+	margin: 0 auto;
+}
+table{
+	color: white;
+	border: 5px solid black;
+	border-collapse: collapse;
+	width: 600px;
+}
+tr,td{
+	padding: 10px;
+}
+caption{
+	border: 5px solid black;
+	color: white;
+	background: #039008;
+	padding: 15px;
+	border-collapse: collapse;
+}
+.odd{
+	background: #006AFB ;
+}
+.even{
+	background: #08EE42;
+}

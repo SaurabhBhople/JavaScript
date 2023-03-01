@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="Example3.css">
+</head>
+<body>
+	<h2>Students</h2>
+	<div id = 'students'></div>
+	<button onclick="showStudents()">Show Students</button>
+	<button onclick="highlightMarks()">Highlight Marks</button>
+	<button onclick="highlightStudent()">Highlight Student</button>
+	<button onclick="clearStyles()">Clear</button>
+	<script>
+		let highMarks = false;
+		let highStudent = false;
+		let students = [
+		{name:'Bob', maths: 82, computers: 88},
+		{name:'Jack', maths: 44, computers: 55},
+		{name:'Mary', maths: 91, computers: 73},
+		{name:'Dave', maths: 60, computers: 89},
+		{name:'Julia', maths: 58, computers: 60},
+		{name:'Steve', maths: 42, computers: 47},
+		{name:'Mark', maths: 87, computers: 66}
+		];
+		function showStudents() {
+			const arr1 = students.map(function(ele){
+				let str = '<tr class = \''+getClassStudent(ele)+'\'>';
+				str+='<td class=\'td1\'>' + ele.name + '</td>';
+				str+='<td class=\''+getClassMarks(ele.maths)+'\'>' + ele.maths + '</td>';
+				str+='<td class=\''+getClassMarks(ele.computers)+'\'>' + ele.computers + '</td>';
+				str+= '<td><button class=\'remBtn\' onclick=\'remove("'+ele.name+'")\'>Remove</button></td>';
+				str+= '</tr>';
+				return str;
+			});
+			let header = '<tr>';
+			header += '<th class=\'th1\' onclick = \'sort(0)\'>Name</th>';
+			header += '<th class=\'th1\' onclick = \'sort(1)\'>Maths</th>';
+			header += '<th class=\'th1\' onclick = \'sort(2)\'>Computers</th>';
+			header += '<th class=\'th\'></th>';
+			header += '</tr>';
+			let html = '<table class=\'table1\'>' + header + arr1.join('') + '</table>';
+		
+			let element = document.getElementById('students');
+			// console.log(html);
+			element.innerHTML = html;
+		}
+		function remove(name) {
+			console.log('Remove',name)
+			let index = students.findIndex(function(st){
+				return st.name == name;
+			})
+			students.splice(index,1);
+			showStudents();
+		}
+		function getClassStudent(st) {
+			let total = st.maths + st.computers;
+			if(total>=150 && highStudent)
+				return 'total150'
+			else if(total<=100 && highStudent)
+				return 'total100'
+			else
+				return '';
+		}
+		function getClassMarks(marks) {
+			if(marks>=75 && highMarks)
+				return 'td1 score75';
+			else if(marks<=50 && highMarks)
+				return 'td1 score50';
+			else
+				return 'td1';
+		}
+		function highlightMarks() {
+			highMarks = true;
+			highStudent = false;
+			showStudents();
+		}
+
+		function highlightStudent() {
+			highStudent = true;
+			highMarks = false;
+			showStudents();
+		}
+		function clearStyles() {
+			highStudent = false;
+			highMarks = false;
+			showStudents();
+		}
+		function sort(colno) {
+			if(colno == 0)
+				students.sort(sortName);
+			else if(colno ==0)
+				students.sort(sortMaths);
+			else 
+				students.sort(sortComputer);
+			showStudents();
+		}
+		function sortName(st1, st2) {
+			return st1.name.localeCompare(st2.name);
+		}
+		function sortMaths(st1,st2) {
+			return st1.maths - st2.maths;
+		}
+		function sortComputer(st1,st2) {
+			return st1.computers - st2.computers;
+		}
+
+	</script>
+</body>
+</html>

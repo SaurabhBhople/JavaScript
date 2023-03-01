@@ -1,0 +1,45 @@
+body{
+	width: 70%;
+	margin: auto;
+	font-size: 20px;
+}
+main Table{
+	border-collapse: collapse;
+	margin: 2% 3%;
+	text-align: center;
+}
+main th{
+	color: white;
+	background: blue;
+	padding-left:15px;
+	padding-right: 15px;
+	border: 2px solid white;
+	font-style: bold;
+}
+main td{
+	border: 2px solid black;
+	font-weight: bold;
+}
+main table button{
+	background: lightgreen;
+	border: 2px solid gray;
+}
+section table {
+	border-collapse: collapse;
+	text-align: center;
+}
+section table th{
+	color: white;
+	background: blue;
+
+	border: 2px solid white;
+	font-size: 20px;
+}
+section table td{
+	border: 2px solid black;
+	font-weight: bold;
+}
+section button {
+	background: #FE9DBD;
+	border: 2px solid gray;
+}

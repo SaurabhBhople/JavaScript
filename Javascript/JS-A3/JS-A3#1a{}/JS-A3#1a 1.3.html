@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="Task1.3.css">
+	<title>Task 1.3</title>
+
+</head>
+<body>
+	<h1>Student</h1>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Maths</th>
+			<th>Computers</th>
+			<th></th>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>82</td>
+			<td>88</td>
+			<td><button>Remove</button></td>
+		</tr>
+		<tr>
+			<td>Jack</td>
+			<td>44</td>
+			<td>55</td>
+			<td><button>Remove</button></td>
+		</tr>
+		<tr>
+			<td>Mary</td>
+			<td>91</td>
+			<td>73</td>
+			<td><button>Remove</button></td>
+		</tr>
+		<tr>
+			<td>Dave</td>
+			<td>60</td>
+			<td>89</td>
+			<td><button>Remove</button></td>
+		</tr>
+		<tr>
+			<td>Julia</td>
+			<td>58</td>
+			<td>60</td>
+			<td><button>Remove</button></td>
+		</tr>
+		<tr>
+			<td>Stave</td>
+			<td>42</td>
+			<td>47</td>
+			<td><button>Remove</button></td>
+		</tr>
+	</table>
+	<div id= "myDIV">
+	<button class= "btn">Show Students</button>
+	<button class="btn">Highlight Marks</button>
+	<button class="btn">Highlight Students</button>
+	<button class="btn">Clear</button>
+	</div>
+	<script>
+	// Add active class to the current button (highlight it)
+	var header = document.getElementById("myDIV");
+	var btns = header.getElementsByClassName("btn");
+	for (var i = 0; i < btns.length; i++) {
+	  btns[i].addEventListener("click", function() {
+	  var current = document.getElementsByClassName("active");
+	  if (current.length > 0) { 
+	    current[0].className = current[0].className.replace(" active", "");
+	  }
+	  this.className += " active";
+	  });
+	}
+</script>
+</body>
+</html>

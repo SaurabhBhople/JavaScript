@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<input type="text" id="txt1" placeholder="Enter the name" maxlength="6" readonly>
+	<button onclick="display()">Display</button>
+	<script type="text/javascript">
+		function display() {
+			let txtField = document.getElementById('txt1');
+			console.log(txtField.value);
+			txtField.value='';
+			txtField.placeholer ='Get Name';
+			txtField.maxLength = 10;
+		}
+	</script>
+</body>
+</html>

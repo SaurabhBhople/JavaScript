@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>A3#a1.2</title>
+	<link rel="stylesheet" type="text/css" href="1.2.css">
+</head>
+<body>	
+	<h2>Sales Data</h2>
+	<h3 id='name' class='showBlue'>Seller : Jack Smith</h3>
+	<h3 id="email" class="showBlue">jack@gmail.com</h3>
+	<h3 id="mobile" class="showBlue">Mobile : 999244523</h3>
+	<button onclick="changeNamesStyle()">Change name Style</button>
+	<button onclick="changeStyleAll()">All Green</button>
+	<button onclick="clearStyle()">Clear Styles</button>
+	<script>
+		const ids = ['name', 'email', 'mobile']
+		function changeNamesStyle() {
+			let element = document.getElementById('name');
+			element.className = 'showGreen'
+		}
+		function changeStyleAll() {
+			for(let i = 0; i<ids.length; i++){
+				let element = document.getElementById(ids[i]);
+				element.className = 'showGreen';
+			}
+		}
+		function clearStyle() {
+			for(let i = 0; i<ids.length; i++){
+				let element = document.getElementById(ids[i]);
+				element.className = '';
+			}
+		}
+	</script>
+</body>
+</html>

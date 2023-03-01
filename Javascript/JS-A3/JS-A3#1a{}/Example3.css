@@ -1,0 +1,30 @@
+.table1{
+ border: 1px solid black;
+ border-collapse: collapse;
+ margin-bottom: 10px;
+}	
+.td1{
+	font-weight: bold;
+	border: 1px solid black;
+	text-align: center;
+}
+.th1{
+	background-color: black;
+	color: white;
+	border: 1px solid white;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.score75, .total150{
+	background-color: lightgreen;
+	font-weight: bold;
+}
+.score50, .total100{
+	background-color: lightpink;
+	font-weight: bold;
+}
+.remBtn{
+	margin:2px;
+	background-color: red;
+	color: white;
+}
